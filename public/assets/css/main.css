@@ -1,0 +1,306 @@
+/* 1. helper classes */
+
+.m0 {
+    margin-bottom: 0;
+}
+
+.mt0 {
+    margin-top: 0 !important;
+}
+
+.b0 {
+    border: 0;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.dark-primary-color    { background: #C2185B; }
+.default-primary-color { background: #E91E63; }
+.light-primary-color   { background: #F8BBD0; }
+.primary-light-text-color { color: #F8BBD0; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #607D8B; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #727272; }
+.divider-color         { border-color: #B6B6B6; }
+
+/* 2. Wide settings */
+
+body {
+    font-family: 'Lato';
+    color: #4e5254;
+    background-color: #f7f7f7;
+}
+
+.fa-btn {
+    margin-right: 6px;
+}
+
+a {
+    text-decoration: none !important;
+    color: #E91E63;
+}
+
+a:hover {
+    text-decoration: none !important;
+    color: #C2185B;
+}
+
+.dropdown-menu>li>a {
+    color: #F8BBD0 !important;
+}
+
+.dropdown-menu>li:hover {
+    background-color: #C2185B;
+}
+
+/* PANELS */
+.panel-default {
+    border-color: #f5f5f5;
+}
+
+.panel .panel-default {
+    border-color: #eff6f9;
+}
+
+.panel-default .panel-heading {
+    background-color: #f4fbff;
+    border-color: #eff6f9;
+    color: #607d8b;
+}
+
+/* BUTTONS */
+.btn-primary {
+    color: #f5f5f5;
+    background-color: #607d8b;
+    border-color: #ffffff;
+}
+
+.btn-primary:hover {
+    color: #ffffff;
+    background-color: #a4c3d2;
+    border-color: #ffffff;
+}
+
+/* tags */
+.tag {
+    text-decoration: none !important;
+}
+.tags-container {
+    margin-left: -6px;
+}
+
+a .causes_tag {
+    color: #FFFFFF;
+    background: #f3c7d6;
+    border: 1px solid #f3c7d6;
+    border-radius: 4px;
+    cursor: default;
+    margin: 5px 0 0 6px;
+    padding: 0 6px;
+}
+
+a .causes_tag:hover{
+    background-color: #C2185B;
+    cursor: pointer;
+}
+
+a .needs_tag {
+    color: #FFFFFF;
+    background: #80b5ce;
+    border: 1px solid #80b5ce;
+    border-radius: 4px;
+    cursor: default;
+    margin: 5px 0 0 6px;
+    padding: 0 6px;
+}
+
+a .needs_tag:hover{
+    background-color: #607d8b;
+    cursor: pointer;
+}
+
+#causes .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice {
+    color: #FFFFFF;
+    background: #E91E63;
+}
+
+#causes .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove:hover {
+    color: #FFFFFF;
+}
+
+#causes .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove {
+    color: #F8BBD0;
+}
+
+#needs .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice {
+    color: #FFFFFF;
+    background: #80b5ce;
+}
+
+#needs .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove:hover {
+    color: #FFFFFF;
+}
+
+#needs .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove {
+    color: #F8BBD0;
+}
+
+/* TAGS select2 select */
+.select2-container--bootstrap .select2-selection {
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+
+
+/* 3. Homepage */
+
+.jumbotron {
+    min-height: 200px;
+    background-image: url('../images/lotus_pink.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jumbotron .text-container {
+    /*background-color: rgba(11, 16, 12, 0.27);*/
+    position: relative;
+    bottom: 5px;
+    padding: 10px;
+    color: #ebf6d0;
+}
+
+/* 4. NAvbar */
+
+.navbar-default .navbar-nav>li>a {
+    color: #FFFFFF;
+}
+
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+    color: #FFFFFF;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #FFFFFF;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #FFFFFF;
+}
+
+
+/*5. Browse */
+
+#map_container {
+    margin-bottom: 20px;
+}
+
+#map_container #map {
+    width: 100%;
+    height: 400px;
+    background-color: grey;
+}
+
+/* 6. Show Cause */
+
+#involveButtonFixed {
+    position: fixed;
+    bottom: 0px;
+}
+
+.embed-responsive {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+a > .fa-facebook-square:hover {
+    color: #3b5998;
+}
+
+a > .fa-google-plus-square:hover {
+    color: #dd4b39;
+}
+
+a > .fa-twitter-square:hover {
+    color: #1d8dad;
+}
+
+/*7. Involve Modal*/
+
+.btn-facebook {
+    color: #fff;
+    background-color: #3b5998;
+    border-color: rgba(0,0,0,0.2);
+}
+
+.btn-facebook:hover {
+    color: #fff;
+    background-color: #2a4171;
+}
+
+.btn-google:hover {
+    color: #fff;
+    background-color: #ad3c2e;
+}
+
+.btn-google {
+    color: #fff;
+    background-color: #dd4b39;
+    border-color: rgba(0,0,0,0.2);
+}
+
+.btn-twitter:hover {
+    color: #fff;
+    background-color: #1d8dad;
+}
+
+.btn-twitter {
+    color: #fff;
+    background-color: #26c4f1;
+    border-color: rgba(0,0,0,0.2);
+}
+
+.btn-social {
+    position: relative;
+    padding-left: 44px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-social>:first-child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 32px;
+    line-height: 34px;
+    font-size: 1.6em;
+    text-align: center;
+    border-right: 1px solid rgba(0,0,0,0.2);
+}
+
+/* NGO Edit Cause*/
+.embed-responsive .fa-trash-o {
+    z-index: 900;
+}
+
+/* 404 */
+.error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:15px;margin-bottom:15px;}
+.error-actions .btn { margin-right:10px; }
+
+/* FOOTER */
+footer {
+    background-color: #C2185B;
+    margin-top: 20px;
+    padding-top: 20px;
+    color: #FFFFFF;
+}

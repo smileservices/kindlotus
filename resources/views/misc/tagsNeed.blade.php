@@ -1,0 +1,1 @@
+@foreach($cause->needs as $tag)<a class="tag" href="{{ url('search/need/'.$tag->id.'/'.str_slug($tag->tag, '-')) }}"><span class="needs_tag">{{ $tag->tag }}</span></a>@endforeach
