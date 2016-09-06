@@ -19,8 +19,9 @@
 @else
     <h3>Nu exista cauze care sa corespunda cautarii</h3>
 @endif
-@endsection
 </div>
+@endsection
+
 @if (count($causes) != 0)
 @include('search.js')
 @endif
