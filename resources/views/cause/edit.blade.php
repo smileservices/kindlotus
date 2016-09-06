@@ -22,7 +22,6 @@
     @include('media.gallery')
 
 </div>
-
 @endsection
 
 @include('cause.edit.js')
