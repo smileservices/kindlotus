@@ -69,6 +69,9 @@
 
         <input type="hidden" id="lat" name="lat">
         <input type="hidden" id="lng" name="lng">
+        <input type="hidden" id="country" name="country">
+        <input type="hidden" id="area" name="area">
+        <input type="hidden" id="city" name="city">
 
 
         <button id="" class="btn btn-primary btn-block" type="submit">

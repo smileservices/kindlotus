@@ -1,14 +1,9 @@
 @section('extraJs')
+@include('cause.setAddressJS')
 <script type="text/javascript">
 
   var lat = {{ $location['lat'] }};
   var lng = {{ $location['lon'] }};
-  function setCoords(marker){
-    var lat = marker.latLng.lat();
-    var lng = marker.latLng.lng();
-    $('input#lat').val(lat);
-    $('input#lng').val(lng);
-  };
 
   function initMap() {
   var myLatLng = {lat: lat, lng: lng};
@@ -24,9 +19,14 @@
     title: 'Pune-ma unde este cauza',
     draggable: true
   });
+    var geocoder = new google.maps.Geocoder;
+
 
   google.maps.event.addListener(marker, 'dragend', function(marker) {
-    setCoords(marker);
+    var latLng = setCoords(marker);
+    geocoder.geocode({'location': latLng}, function(results, status) {
+        setAddress(results);
+      });
   });
 
   };
