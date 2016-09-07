@@ -71,6 +71,9 @@ class CauseController extends Controller
         $map = new Map([
             'coordsX' => $request['lat'],
             'coordsY' => $request['lng'],
+            'country' => $request['country'],
+            'area' => $request['area'],
+            'city' => $request['city'],
             'cause_id' => $cause->id
         ]);
         $map->save();
