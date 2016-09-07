@@ -152,6 +152,9 @@ class CauseController extends Controller
                 $map = $cause->map;
                 $map->coordsX = $request['lat'];
                 $map->coordsY = $request['lng'];
+                $map->country = $request['country'];
+                $map->area = $request['area'];
+                $map->city = $request['city'];
                 $map->save();
             }
         } elseif ($request['submit'] == 'media_upload'){
