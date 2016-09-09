@@ -5,7 +5,6 @@
                 <h4>Info</h4>
                 <ul class="list-unstyled">
                     <li><a href="{{ url('about') }}">Despre</a></li>
-                    <li><a href="{{ url('about/us') }}">Pentru Organizatii</a></li>
                     <li><a href="{{ url('about/guide') }}">Ghid de folosire</a></li>
                 </ul>
             </div>

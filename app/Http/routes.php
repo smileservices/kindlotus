@@ -21,6 +21,15 @@ Route::get('/', function () {
     return view('welcome', $data);
 });
 
+Route::group(['prefix' => 'about', 'middleware' => ['web']], function () {
+    Route::get('/', function(){
+        return view('about/about');
+    });
+    Route::get('/guide', function(){
+        return view('about/guide');
+    });
+});
+
 Route::get('/home', 'UserController@index')->middleware('auth');
 
 Route::auth();

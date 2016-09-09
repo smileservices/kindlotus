@@ -2,14 +2,8 @@
 @include('media.css')
 
 @section('content')
+@include('misc.header')
 
-<div class="jumbotron">
-	<div class="container">
-		<div class="text-container">
-		<h1>Creeaza lumea mai buna</h1>
-		</div>
-	</div>
-</div>
 
 <div class="container">
     @include('search.search')
