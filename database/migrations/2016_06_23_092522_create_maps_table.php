@@ -19,6 +19,9 @@ class CreateMapsTable extends Migration
             $table->integer('cause_id')->unsigned();
             $table->string('coordsX');
             $table->string('coordsY');
+            $table->string('country');
+            $table->string('area');
+            $table->string('city');
         });
 
         Schema::table('maps', function (Blueprint $table) {
