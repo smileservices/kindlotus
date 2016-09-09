@@ -299,8 +299,30 @@ a > .fa-twitter-square:hover {
 
 /* FOOTER */
 footer {
-    background-color: #C2185B;
+    color: #F8BBD0;
+}
+
+footer h4 {
+    color: #FFFFFF;
+}
+footer .top {
+    background-color: #E91E63;
     margin-top: 20px;
     padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+footer a {
+    color: #F8BBD0;
+}
+footer a:hover {
     color: #FFFFFF;
+}
+footer a .fa:hover {
+    color: #FFFFFF;
+}
+
+footer .bottom {
+    background-color: #C2185B;
+    padding-top: 20px;
 }
