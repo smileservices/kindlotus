@@ -7,9 +7,16 @@
 <ul class="nav navbar-nav navbar-right">
     <!-- Authentication Links -->
     @if (Auth::guest())
-        <li><a data-toggle="modal" data-target="#loginModal" href="#">Login ca Voluntar</a></li>
-        <li><a href="{{ url('ngo/login') }}">Login ca ONG</a></li>
-        <li><a href="{{ url('/register') }}">Register</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                <i class="fa fa-sign-in"> </i>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li><a data-toggle="modal" data-target="#loginModal" href="#">Login ca Voluntar</a></li>
+                <li><a href="{{ url('ngo/login') }}">Login ca ONG</a></li>
+                <li><a href="{{ url('/register') }}">Inregistreaza-te Voluntar</a></li>
+            </ul>
+        </li>
     @else
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

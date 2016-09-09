@@ -326,3 +326,8 @@ footer .bottom {
     background-color: #C2185B;
     padding-top: 20px;
 }
+
+/* ALERTS */
+#alert-main {
+    margin-bottom: 0;
+}

@@ -1,20 +1,20 @@
 <footer>
     <div class="top">
         <div class="container">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <h4>Info</h4>
                 <ul class="list-unstyled">
                     <li><a href="{{ url('about') }}">Despre</a></li>
                     <li><a href="{{ url('about/guide') }}">Ghid de folosire</a></li>
                 </ul>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <h4>Contact</h4>
                 <ul class="list-unstyled">
-                    <li> <a href=""><i class="fa fa-envelope"> </i> Scrie-ne un mesaj</a></li>
+                    <li> <a href="#contactModal" data-toggle="modal"><i class="fa fa-envelope"> </i> Scrie-ne un mesaj</a></li>
                 </ul>
             </div>
-            <div class="col-md-4 text-right">
+            <div class="col-md-3">
                 <h4>Urmareste-ne</h4>
                 <a target="_blank" class="facebook_share" rel="nofollow" href="https://www.facebook.com/kindlotus">
                     <i class="fa fa-2x fa-facebook-square primary-light-text-color" aria-hidden="true"> </i>
@@ -25,6 +25,12 @@
                 {{--<a target="_blank" href="">--}}
                     {{--<i class="fa fa-2x fa-twitter-square primary-light-text-color" aria-hidden="true"> </i>--}}
                 {{--</a>--}}
+            </div>
+            <div class="col-md-3">
+                <h4>Contribuie</h4>
+                <a target="_blank" class="facebook_share" rel="nofollow" href="https://github.com/smileservices/kindlotus">
+                    <i class="fa fa-2x fa-github-square primary-light-text-color" aria-hidden="true"> </i>
+                </a>
             </div>
         </div>
     </div>
@@ -41,3 +47,5 @@
         </div>
     </div>
 </footer>
+
+@include('misc.contactModal')

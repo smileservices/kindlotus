@@ -32,6 +32,8 @@ Route::group(['prefix' => 'about', 'middleware' => ['web']], function () {
 
 Route::get('/home', 'UserController@index')->middleware('auth');
 
+Route::post('/message', 'MessageController@guestMessage');
+
 Route::auth();
 
 // socialite login

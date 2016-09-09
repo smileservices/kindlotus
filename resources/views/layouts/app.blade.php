@@ -30,7 +30,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{ url('') }}">HelpMap</a>
+      <a class="navbar-brand" href="{{ url('') }}">{{ env('SITE_NAME') }}</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -48,7 +48,11 @@
     </div>
   </div><!-- /.container-fluid -->
 </nav>
-
+    @if (session()->has('message'))
+    <div class="alert alert-info alert-dismissible" role="alert" id="alert-main">
+        <p>{{ session('message') }}</p>
+    </div>
+    @endif
     @yield('content')
     @if(Auth::guest())
         @include('user.loginModal')
