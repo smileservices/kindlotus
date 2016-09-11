@@ -118,7 +118,6 @@ Route::group(['prefix' => 'user', 'middleware' => ['web']], function() {
 
     Route::get('/profile/{user}', 'UserController@show');
     Route::get('/ban/{user}', 'UserController@ban')->middleware('admin');
-
 });
 
 Route::group(['prefix' => 'updates', 'middleware' => ['web']], function() {

@@ -5,19 +5,30 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
-class PasswordController extends Controller
+class PassController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
-    | Password Reset Controller
+    | Registration & Login Controller
     |--------------------------------------------------------------------------
     |
-    | This controller is responsible for handling password reset requests
-    | and uses a simple trait to include this behavior. You're free to
-    | explore this trait and override any methods you wish to tweak.
+    | This controller handles the registration of new users, as well as the
+    | authentication of existing users. By default, this controller uses
+    | a simple trait to add these behaviors. Why don't you explore it?
     |
     */
 
+    /**
+     * Where to redirect users after login / registration.
+     *
+     * @var string
+     */
+
+    /**
+     * Create a new authentication controller instance.
+     *
+     * @return void
+     */
     use ResetsPasswords;
 
     /**
@@ -29,4 +40,5 @@ class PasswordController extends Controller
     {
         $this->middleware('guest');
     }
+
 }
