@@ -1,4 +1,5 @@
 @section('extraJs')
+<script src="{{url('assets/js/marker-clusterer/src/markerclusterer.js')}}"></script>
 <script type="text/javascript">
 
 function initMap() {
@@ -35,6 +36,9 @@ function initMap() {
             <?php $i++ ?>
         @endif
     @endforeach
+    var clusterImagePath = '{{ url('assets/js/marker-clusterer/images/m') }}';
+    var markerCluster = new MarkerClusterer(map, markers, {imagePath: clusterImagePath});
+
 
 	var bounds = new google.maps.LatLngBounds();
 	for (var i = 0; i < markers.length; i++) {
