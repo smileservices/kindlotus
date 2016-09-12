@@ -15,6 +15,9 @@ class SocialAccountService
             return $account->user;
         } else {
 
+            // if no email is supplied, return 'noEmail'
+            if (!$providerUser->getEmail()) return 'noEmail';
+
             $account = new SocialAccount([
                 'provider_user_id' => $providerUser->getId(),
                 'provider' => $provider

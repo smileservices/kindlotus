@@ -96,6 +96,9 @@ class AuthController extends Controller
     {
         $service = new SocialAccountService();
         $user = $service->createOrGetUser(Socialite::driver($provider)->user(), $provider);
+        if ($user == 'noEmail') {
+            return redirect()->back()->with('message', 'We need to have an e-mail address associated with your account');
+        }
         if (!$user->active()) {
             return abort(403, 'Nu va puteti conecta cu acest utiliator');
         }
