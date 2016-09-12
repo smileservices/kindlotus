@@ -7,6 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request as AuthRequest;
 
 use Laravel\Socialite\Facades\Socialite;
 use App\SocialAccountService;
@@ -81,6 +82,15 @@ class AuthController extends Controller
             return abort(403, 'Nu va puteti conecta cu acest utiliator');
         }
         return redirect(url()->previous());
+    }
+
+    protected function sendFailedLoginResponse(AuthRequest $request)
+    {
+        return redirect()->back()
+            ->withInput($request->only($this->loginUsername(), 'remember'))
+            ->withErrors([
+                $this->loginUsername() => $this->getFailedLoginMessage(),
+            ], 'userLogin');
     }
 
 

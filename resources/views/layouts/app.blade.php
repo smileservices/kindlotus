@@ -56,6 +56,13 @@
     @yield('content')
     @if(Auth::guest())
         @include('user.loginModal')
+        @if ($errors->userLogin->any())
+           <script>
+                document.addEventListener('DOMContentLoaded', function(){
+                    $('#loginModal').modal('show');
+                });
+           </script>
+            @endif
     @endif
 
     @include('layouts.footer')
