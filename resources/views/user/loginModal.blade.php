@@ -49,7 +49,7 @@
                 {{ csrf_field() }}
                 <div class="col-xs-12">
                 <button class="btn btn-primary btn-block" type="submit">Login</button>
-                <span class="help-block"><a href="{{ url('/password/reset') }}">Am uitat parola</a> | <a href="{{ url('register') }}">Inregistrare</a></span>
+                <span class="help-block"><a href="{{ url('/user/password/reset') }}">Am uitat parola</a> | <a href="{{ url('register') }}">Inregistrare</a></span>
                 </div>
             </form>
     	</div>

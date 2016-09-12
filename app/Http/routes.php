@@ -118,7 +118,13 @@ Route::group(['prefix' => 'user', 'middleware' => ['web']], function() {
 
     Route::get('/profile/{user}', 'UserController@show');
     Route::get('/ban/{user}', 'UserController@ban')->middleware('admin');
+
+    // Password Reset Routes...
+    Route::get('password/reset/{token?}', 'Auth\PassController@showResetForm');
+    Route::post('password/email', 'Auth\PassController@sendResetLinkEmail');
+    Route::post('password/reset', 'Auth\PassController@reset');
 });
+
 
 Route::group(['prefix' => 'updates', 'middleware' => ['web']], function() {
 
