@@ -8,10 +8,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request as AuthRequest;
-
+use Illuminate\Support\Facades\Input;
 use Laravel\Socialite\Facades\Socialite;
 use App\SocialAccountService;
 use Illuminate\Support\Facades\Auth;
+use Mail;
 
 class AuthController extends Controller
 {
@@ -55,7 +56,7 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255|alpha_dash|size:255',
+            'name' => 'required|max:255|max:255|regex:/^[(a-zA-Z\s)]+$/u',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
@@ -69,17 +70,46 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+        $confirmation_code = str_random(30);
+        //send email confirmation
+        Mail::send('emails.verifyEmail', ['code' => $confirmation_code, 'name' => $data['name']], function($message) {
+            $message->to(Input::get('email'), Input::get('name'))
+                ->subject('Verify your email address');
+        });
+        //set flash message
+        session()->flash('message','Thanks for signing up! Please check your email.');
+        //insert user in db
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'active' => 1,
             'password' => bcrypt($data['password']),
+            'confirmation_code' => $confirmation_code
         ]);
+    }
+
+    public function confirmEmail($code)
+    {
+        if (!$code) {
+            return abort(403, 'The confirmation code is not right');
+        }
+        $user = User::getByConfirmationCode($code)->first();
+        if (!$user) {
+            return abort(403, 'The confirmation code is not right');
+        }
+        $user->confirmed = 1;
+        $user->confirmation_code = null;
+        $user->save();
+        Auth::logIn($user);
+        return redirect('')->with('message', 'You have successfully verified your account!');
     }
 
     public function authenticated($request, $user){
         if (!$user->active()) {
-            return abort(403, 'Nu va puteti conecta cu acest utiliator');
+            return abort(403, 'You cannot login with this user. Contact admin');
+        }
+        if (!$user->confirmed()) {
+            return abort(403, 'You haven\'t confirmed you email address');
         }
         return redirect(url()->previous());
     }
@@ -93,6 +123,20 @@ class AuthController extends Controller
             ], 'userLogin');
     }
 
+    public function register(AuthRequest $request)
+    {
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+
+        $this->create($request->all());
+
+        return redirect($this->redirectPath());
+    }
 
     /*
      *  SOCIALITE functions

@@ -119,6 +119,9 @@ Route::group(['prefix' => 'user', 'middleware' => ['web']], function() {
     Route::get('/profile/{user}', 'UserController@show');
     Route::get('/ban/{user}', 'UserController@ban')->middleware('admin');
 
+    // Verify Email
+    Route::get('/register/verify/{code}', 'Auth\AuthController@confirmEmail');
+
     // Password Reset Routes...
     Route::get('password/reset/{token?}', 'Auth\PassController@showResetForm');
     Route::post('password/email', 'Auth\PassController@sendResetLinkEmail');

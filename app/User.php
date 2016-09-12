@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'active'
+        'name', 'email', 'password', 'active', 'confirmation_code'
     ];
 
     /**
@@ -65,8 +65,19 @@ class User extends Authenticatable
         return false;
     }
 
+    public function confirmed()
+    {
+        if ($this->confirmed == 1) return true;
+        return false;
+    }
+
     public function socialAccounts()
     {
         return $this->hasMany(SocialAccount::class);
+    }
+
+    public static function getByConfirmationCode($code)
+    {
+        return self::where('confirmation_code', $code)->get();
     }
 }
