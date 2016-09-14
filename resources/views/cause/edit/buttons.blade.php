@@ -46,6 +46,7 @@
               </form>
             </div>
             <div class="col-xs-4">
+                @if ($cause->active == 2)
                <form action="{{ url('causes/'.$cause->id).'/success' }}" method="POST">
                     <div class="form-group">
                     <button type="submit" class="btn btn-success form-control">
@@ -54,6 +55,7 @@
                     <input type="hidden" name="success" value="1"/>
                     {{ csrf_field() }}
                 </form>
+                @endif
             </div>
         </div>
     </div>

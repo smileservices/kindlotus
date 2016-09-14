@@ -35,4 +35,16 @@
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_APP_ID') }}&callback=initMap">
 </script>
+<script>
+    $(document).ready(function() {
+        $('#submit').click(function(a){
+            var lat = $('input#lat').val();
+            var lng = $('input#lat').val();
+            if (lat == '' || lng == '') {
+                alert('Muta markerul pe locatia cauzei!');
+                a.preventDefault();
+            }
+        });
+    });
+</script>
 @endsection

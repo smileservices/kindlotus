@@ -4,8 +4,8 @@
 
 <div class="container">
 
-<h3>Cauza noua</h3>
-
+<h3>Cauza noua <br/>
+<small>1: Seteaza Detaliile</small></h3>
 
 
   <div class="panel panel-default">
@@ -24,22 +24,22 @@
       <form action="{{ url('causes') }}" method="POST">
         <div class="form-group">
           <label for="">Numele Cauzei</label>
-          <input class="form-control" type="text" name="name">
+          <input class="form-control" type="text" name="name" required="required">
         </div>
 
         <div class="form-group">
           <label for="">Scurta descriere (255 caractere)</label>
-          <textarea class="form-control" name="description" id="" cols="30" rows="3"></textarea>
+          <textarea class="form-control" name="description" id="" cols="30" rows="3" required="required"></textarea>
         </div>
 
         <div class="form-group">
           <label for="">Povestea</label>
-          <textarea class="form-control" name="story" id="" cols="30" rows="10"></textarea>
+          <textarea class="form-control" name="story" id="" cols="30" rows="10" required="required"></textarea>
         </div>
 
         <div class="form-group" id="causes">
           <label class="control-label" for="tags">Tipul cauzei</label>
-          <select class="form-control" name="tags[]" multiple="multiple">
+          <select class="form-control" name="tags[]" multiple="multiple" required="required">
             @foreach($tags as $tag)
             <option value="{{ $tag->id }}">{{ $tag->tag }}</option>
             @endforeach
@@ -48,7 +48,7 @@
 
         <div class="form-group" id="needs">
           <label class="control-label" for="needs">Cu ce putem ajuta</label>
-          <select class="form-control" name="needs[]" multiple="multiple">
+          <select class="form-control" name="needs[]" multiple="multiple" required="required">
             @foreach($needs as $tag)
             <option value="{{ $tag->id }}">{{ $tag->tag }}</option>
             @endforeach
@@ -57,7 +57,7 @@
 
         <div class="form-group">
           <label for="">Datele de contact pentru voluntari</label>
-          <textarea class="form-control" name="contact" id="" cols="30" rows="3"></textarea>
+          <textarea class="form-control" name="contact" id="" cols="30" rows="3" required="required"></textarea>
         </div>
 
         <div class="form-group">
@@ -74,8 +74,8 @@
         <input type="hidden" id="city" name="city">
 
 
-        <button id="" class="btn btn-primary btn-block" type="submit">
-          Trimite
+        <button id="submit" class="btn btn-primary btn-block" type="submit">
+          Mergi la pasul 2
         </button>
 
     </div>
