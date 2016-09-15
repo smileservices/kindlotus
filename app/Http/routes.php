@@ -58,8 +58,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web']], function () {
     Route::get('/password/reset/{token?}','AdminAuth\PasswordController@showResetForm');
 
     //Change Password
-    Route::get('/profile', 'AdminController@profileForm');
-    Route::post('/profile', 'AdminController@profileUpdate');
+    Route::get('/settings', 'AdminController@settingsForm');
+    Route::post('/settings', 'AdminController@settingsUpdate');
 
     //Tags
     Route::get('/tags', 'AdminController@tags');
@@ -88,6 +88,10 @@ Route::group(['prefix' => 'ngo', 'middleware' => ['web']], function () {
     Route::post('/password/email','NgoAuth\PasswordController@sendResetLinkEmail');
     Route::post('/password/reset','NgoAuth\PasswordController@reset');
     Route::get('/password/reset/{token?}','NgoAuth\PasswordController@showResetForm');
+
+    //Change Password
+    Route::get('/settings', 'NgoController@settingsForm');
+    Route::post('/settings', 'NgoController@settingsUpdate');
 
     // NGO Profile
     Route::get('/', 'NgoController@index');

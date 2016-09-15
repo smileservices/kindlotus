@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 use App\Ngo;
+use Hash;
 
 class NgoController extends Controller
 {
@@ -57,5 +58,26 @@ class NgoController extends Controller
         $ngo->save();
 
         return redirect('ngo/profile/'.$ngo->id);
+    }
+
+    public function settingsForm()
+    {
+        $user = Auth::guard('ngo')->user();
+        $data = [
+            'user' => $user,
+            'type' => 'ngo'
+        ];
+        return view('admin.settings', $data);
+    }
+
+    public function settingsUpdate(Request $request)
+    {
+        $user = Auth::guard('ngo')->user();
+        $user->update($request->except('password'));
+        if($request->get('password') != ""){
+            $user->password = Hash::make($request->get('password'));
+        }
+        $user->save();
+        return redirect()->back();
     }
 }

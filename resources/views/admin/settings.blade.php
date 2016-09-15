@@ -7,7 +7,7 @@
                     <div class="panel-heading">Edit Profile</div>
 
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('admin/profile') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url($type.'/settings') }}">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">

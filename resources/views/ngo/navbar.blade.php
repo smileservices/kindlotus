@@ -15,6 +15,7 @@
 
             <ul class="dropdown-menu" role="menu">
                 <li><a href="{{ url('ngo/edit') }}"><i class="fa fa-btn fa-edit"></i>Editeaza Profil</a></li>
+                <li><a href="{{ url('ngo/settings') }}"><i class="fa fa-btn fa-cog"></i>Setari</a></li>
                 <li><a href="{{ url('ngo/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
             </ul>
         </li>

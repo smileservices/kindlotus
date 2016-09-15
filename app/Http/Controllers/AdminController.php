@@ -54,16 +54,17 @@ class AdminController extends Controller
         return redirect('admin/tags');
     }
 
-    public function profileForm()
+    public function settingsForm()
     {
         $user = Auth::guard('admin')->user();
         $data = [
-            'user' => $user
+            'user' => $user,
+            'type' => 'admin'
         ];
-        return view('admin.profile', $data);
+        return view('admin.settings', $data);
     }
 
-    public function profileUpdate(Request $request)
+    public function settingsUpdate(Request $request)
     {
         $user = Auth::guard('admin')->user();
         $user->update($request->except('password'));
