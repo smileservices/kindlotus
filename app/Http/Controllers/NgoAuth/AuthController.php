@@ -83,7 +83,7 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
 
-        Auth::guard('ngo')->attempt(['email' => $data['email'], 'password' => $data['password']]);
+//        Auth::guard('ngo')->attempt(['email' => $data['email'], 'password' => $data['password']]);
 
         return redirect($this->redirectPath);
     }
