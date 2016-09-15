@@ -53,7 +53,9 @@
         <p>{{ session('message') }}</p>
     </div>
     @endif
+    <div id="content">
     @yield('content')
+    </div>
     @if(Auth::guest())
         @include('user.loginModal')
         @if ($errors->userLogin->any())

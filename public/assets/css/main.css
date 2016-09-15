@@ -56,6 +56,10 @@ a:hover {
     background-color: #C2185B;
 }
 
+#content {
+    min-height: 500px;
+}
+
 /* PANELS */
 .panel-default {
     border-color: #f5f5f5;
