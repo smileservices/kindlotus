@@ -15,12 +15,7 @@
         } else {
             $class="text-danger";
         } ?>
-        <p class="{{ $class }}">
-			<a href="{{ url('causes/'.$cause->id.'/edit') }}"><i class="fa fa-edit"></i></a>
-			| <span><a href="{{ url('causes/'.$cause->id) }}" class={{ $class }}>{{ $cause->name }}</a></span>
-			| 3 iulie, 2016
-			| <i class="fa fa-user-times"> </i> {{ count($cause->users) }}
-		</p>
+           @include('cause.link', ['class' => $class])
 	    @endforeach
 
 </div>

@@ -28,7 +28,6 @@
         <div class="col-md-4">
             <h4>Cauzele Inactive:</h4>
             @foreach($causesInactive as $cause)
-            <?php $class="text-danger"; ?>
                @include('cause.link', ['class' => 'text-danger'])
             @endforeach
        </div>
