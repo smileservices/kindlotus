@@ -57,6 +57,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web']], function () {
     Route::post('/password/reset','AdminAuth\PasswordController@reset');
     Route::get('/password/reset/{token?}','AdminAuth\PasswordController@showResetForm');
 
+    //Change Password
+    Route::get('/profile', 'AdminController@profileForm');
+    Route::post('/profile', 'AdminController@profileUpdate');
+
     //Tags
     Route::get('/tags', 'AdminController@tags');
     Route::post('/tags', 'AdminController@storeTag');

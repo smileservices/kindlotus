@@ -12,6 +12,8 @@ use App\Tag;
 use App\Need;
 use App\Cause;
 
+use Hash;
+
 class AdminController extends Controller
 {
     public function __construct(){
@@ -50,6 +52,26 @@ class AdminController extends Controller
     public function deleteNeed(Need $need){
         $need->delete();
         return redirect('admin/tags');
+    }
+
+    public function profileForm()
+    {
+        $user = Auth::guard('admin')->user();
+        $data = [
+            'user' => $user
+        ];
+        return view('admin.profile', $data);
+    }
+
+    public function profileUpdate(Request $request)
+    {
+        $user = Auth::guard('admin')->user();
+        $user->update($request->except('password'));
+        if($request->get('password') != ""){
+            $user->password = Hash::make($request->get('password'));
+        }
+        $user->save();
+        return redirect()->back();
     }
 
 }
