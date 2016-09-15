@@ -20,6 +20,7 @@ class AdminController extends Controller
 
     public function index(){
         $data = [
+            'causesActive' => Cause::active()->all(),
             'causesPending' => Cause::pending()->all(),
             'causesInactive' => Cause::inactive()->all()
         ];
