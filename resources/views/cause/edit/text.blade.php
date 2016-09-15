@@ -30,19 +30,18 @@
                 @endforeach
               </select>
             </div>
-
             <div class="form-group" id="needs">
               <label class="control-label" for="needs">Cu ce putem ajuta</label>
               <select class="form-control" name="needs[]" multiple="multiple">
                 @foreach($needs as $tag)
-                    <option {{ ($cause->tags->find($tag->id) ? 'selected' : '') }} value="{{ $tag->id }}">{{ $tag->tag }}</option>
+                    <option {{ ($cause->needs->find($tag->id) ? 'selected' : '') }} value="{{ $tag->id }}">{{ $tag->tag }}</option>
                 @endforeach
               </select>
             </div>
 
             <div class="form-group">
               <label for="">Datele de contact pentru voluntari</label>
-              <textarea class="form-control" name="contact" cols="30" rows="3">{{ $cause->story or '' }}</textarea>
+              <textarea class="form-control" name="contact" cols="30" rows="3">{{ $cause->contact or '' }}</textarea>
             </div>
 
             <div class="form-group">
