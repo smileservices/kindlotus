@@ -90,6 +90,7 @@ class CauseController extends Controller
      */
     public function show(Cause $cause)
     {
+        $userArea = GeoIP::getLocation()['state'];
         // set up the updater (user or ngo)
         $canUpdate = false;
         $loggedUser = null;
@@ -109,6 +110,8 @@ class CauseController extends Controller
         $data['canUpdate'] = $canUpdate;
         $data['tags'] = Tag::allUsed();
         $data['needs'] = Need::allUsed();
+        $data['area'] = Map::allAreaUsed();
+        $data['userArea'] = $userArea;
         $data['images'] = $cause->media()->image();
         $data['videos'] = $cause->media()->video();
         $data['loggedUser'] = $loggedUser;
