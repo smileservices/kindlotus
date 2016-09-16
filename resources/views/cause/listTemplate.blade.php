@@ -2,7 +2,7 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-md-12">
-                <h4><a href="{{ url('causes/'.$cause->id) }}">{{ ($count ? $count.'# ' : '') }}{{ $cause->name }}</a></h4>
+                <h4><a href="{{ url('causes/'.$cause->id) }}">{{ ($count ? $count.'# ' : '') }}{{ $cause->name }}</a> <small>in {{ $cause->map->area.', '.$cause->map->city }}</small></h4>
                 <span class="tags-container">@include('misc.tagsCause') @include('misc.tagsNeed')</span>
             </div>
             <div class="col-md-12">

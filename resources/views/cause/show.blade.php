@@ -18,7 +18,8 @@
         <a href="#" data-toggle="tooltip" title="Arata pe harta">
             <i class="fa fa-map-marker" id="show_map" aria-hidden="true"></i>
         </a>
-        {{ $cause->name }}
+        {{ $cause->name }}<br/>
+        <small>in {{ $cause->map->area.', '.$cause->map->city }}</small>
     </h3>
 
     <p>Adaugat de <a href="{{ url('ngo/'.$cause->ngo['id']) }}">{{ $cause->ngo['name'] }}</a> in data de {{ date('F d, Y', strtotime($cause->created_at)) }}</p>
