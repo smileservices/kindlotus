@@ -22,7 +22,7 @@
         <small>in {{ $cause->map->area.', '.$cause->map->city }}</small>
     </h3>
 
-    <p>Adaugat de <a href="{{ url('ngo/'.$cause->ngo['id']) }}">{{ $cause->ngo['name'] }}</a> in data de {{ date('F d, Y', strtotime($cause->created_at)) }}</p>
+    <p>Adaugat de <a href="{{ url('ngo/profile/'.$cause->ngo['id']) }}">{{ $cause->ngo['name'] }}</a> in data de {{ date('F d, Y', strtotime($cause->created_at)) }}</p>
 
 <div class="row">
 <div class="col-sm-12 col-md-6">
