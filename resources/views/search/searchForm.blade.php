@@ -1,6 +1,18 @@
 <form action="{{  url('search/causes') }}" method="POST">
 
 <div class="form-group">
+    <label class="control-label" for="area">Localizare </label>
+    <div class=""  id="causes">
+    <select class="form-control" name="area">
+        <option selected value="all">Toate</option>
+        @foreach($area as $area)
+        <option {{ ($userArea == $area->area ? 'selected=selected' : '') }} value="{{ $area->area }}">{{ $area->area }}</option>
+        @endforeach
+    </select>
+    </div>
+</div>
+
+<div class="form-group">
     <label class="control-label" for="tags">Tipul cauzelor </label>
     <div class=""  id="causes">
     <select class="form-control" name="tags[]" multiple="multiple">

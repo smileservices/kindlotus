@@ -12,9 +12,12 @@
 */
 
 Route::get('/', function () {
+    $userArea = GeoIP::getLocation()['state'];
     $data = [
         'tags' => App\Tag::allUsed(),
         'needs' => App\Need::allUsed(),
+        'area' => App\Map::allAreaUsed(),
+        'userArea' => $userArea,
         'lastCauses' => App\Cause::orderBy('created_at', 'desc')->active()->take(3),
         'lastUpdates' => App\Update::orderBy('created_at', 'desc')->active()->take(3)
     ];
