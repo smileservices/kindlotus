@@ -49,11 +49,17 @@ a:hover {
 }
 
 .dropdown-menu>li>a {
-    color: #e91e63 !important;
+    color: #e91e63;
 }
 
 .dropdown-menu>li:hover {
     background-color: #C2185B;
+}
+
+@media(max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #FFFFFF;
+    }
 }
 
 #content {
