@@ -24,7 +24,7 @@
 
                 <div class="form-group">
                     <label for="contact">Date de contact</label>
-                    <textarea class="form-control" name="contact" id="contact" cols="30" rows="3" placeholder="Datele de contact">{{ $ngo->about }}</textarea>
+                    <textarea class="form-control" name="contact" id="contact" cols="30" rows="3" placeholder="Datele de contact">{{ $ngo->contact }}</textarea>
                 </div>
 
                 <div class="form-group">
