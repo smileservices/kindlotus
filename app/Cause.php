@@ -80,7 +80,7 @@ class Cause extends Model
         if ($image) {
             return url($image->url.'thumb_'.$image->name);
         } else {
-            return url('storage/causes/default.jpg');
+            return url('assets/images/default_cause_thumb.jpg');
         }
     }
 
