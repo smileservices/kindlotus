@@ -6,10 +6,10 @@
 <div class="row">
     <div class="col-sm-12">
         <h4>Despre</h4>
-        <p>{{ $ngo->about }}</p>
+        <p>{!! nl2br(e($ngo->about)) !!}</p>
         <h4>Contact</h4>
         <p><a href="{{ $ngo->website }}">{{ $ngo->website }}</a></p>
-        <p>{{ $ngo->contact }}</p>
+        <p>{!! nl2br(e($ngo->contact)) !!}</p>
     </div>
     <div class="col-sm-12 col-md-6">
         <h4>Cauzele active:</h4>
