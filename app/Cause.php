@@ -75,6 +75,15 @@ class Cause extends Model
         return $this->morphMany(Media::class, 'mediaable');
     }
 
+    public function primaryImageThumb(){
+        $image = $this->media()->image()->last();
+        if ($image) {
+            return url($image->url.'thumb_'.$image->name);
+        } else {
+            return url('storage/causes/default.jpg');
+        }
+    }
+
     public function isApproved()
     {
         if ($this->active == 2) return true;

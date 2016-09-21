@@ -130,4 +130,5 @@ class Media extends Model
     public function scopeVideo($query){
         return $query->where('type', 'youtube')->get();
     }
+
 }
