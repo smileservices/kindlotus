@@ -130,6 +130,10 @@ Route::group(['prefix' => 'user', 'middleware' => ['web']], function() {
     Route::get('/profile/{user}', 'UserController@show');
     Route::get('/ban/{user}', 'UserController@ban')->middleware('admin');
 
+    // In case email is not provided by the socialite
+    Route::get('/email/{}', 'Auth\AuthController@needEmail');
+    Route::post('/email/{}', 'Auth\AuthController@needEmailPost');
+
     // Verify Email
     Route::get('/register/verify/{code}', 'Auth\AuthController@confirmEmail');
 
